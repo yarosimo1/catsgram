@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="C:\Users\yaros\IdeaProjects\catsgram\src\main\java\ru\yandex\practicum\catsgram\CatsgramApplication.java">
+</file>
+<file name="C:\Users\yaros\IdeaProjects\catsgram\src\main\java\ru\yandex\practicum\catsgram\model\Image.java">
+</file>
+<file name="C:\Users\yaros\IdeaProjects\catsgram\src\main\java\ru\yandex\practicum\catsgram\model\Post.java">
+</file>
+<file name="C:\Users\yaros\IdeaProjects\catsgram\src\main\java\ru\yandex\practicum\catsgram\model\User.java">
+</file>
+<file name="C:\Users\yaros\IdeaProjects\catsgram\src\main\java\ru\yandex\practicum\controller\HomeController.java">
+</file>
+<file name="C:\Users\yaros\IdeaProjects\catsgram\src\main\java\ru\yandex\practicum\Main.java">
+</file>
+<file name="C:\Users\yaros\IdeaProjects\catsgram\src\main\resources\application.properties">
+</file>
+</checkstyle>
