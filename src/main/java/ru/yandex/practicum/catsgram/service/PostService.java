@@ -4,23 +4,37 @@ import org.springframework.stereotype.Service;
 import ru.yandex.practicum.catsgram.exception.ConditionsNotMetExceptions;
 import ru.yandex.practicum.catsgram.exception.NotFoundException;
 import ru.yandex.practicum.catsgram.model.Post;
+import ru.yandex.practicum.catsgram.model.SortOrder;
 
 import java.time.Instant;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
 @Service
 public class PostService {
-    private final Map<Long, Post> posts = new HashMap<>();
     private final UserService userService;
+
+    private final Map<Long, Post> posts = new HashMap<>();
+    private final Comparator<Post> postDateComporator = Comparator.comparing(Post::getPostDate);
 
     public PostService(UserService userService) {
         this.userService = userService;
     }
 
-    public Collection<Post> findAll() {
-        return posts.values();
+    public Collection<Post> findAll(SortOrder sort, int from, int size) {
+        return posts.values()
+                .stream()
+                .sorted(sort.equals(SortOrder.ASCENDING) ?
+                        postDateComporator : postDateComporator.reversed())
+                .skip(from)
+                .limit(size)
+                .toList();
+    }
+
+    public Post findPostById(long id) {
+        return posts.get(id);
     }
 
     public Post create(Post post) {

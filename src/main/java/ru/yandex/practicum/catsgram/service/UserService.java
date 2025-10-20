@@ -20,6 +20,10 @@ public class UserService {
         return users.values();
     }
 
+    public User getUserById(long id) {
+        return users.get(id);
+    }
+
     public User postUser(User user) {
         if (user.getEmail() == null || user.getEmail().isBlank()) {
             throw new ConditionsNotMetExceptions("Имейл должен быть указан");
